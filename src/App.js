@@ -59,7 +59,7 @@ function App() {
 
 Selamat ${waktu}, ${title}${dosenName}.
 
-Perkenalkan, saya ${nama || '[nama]'} dari kelas ${kelas || '[kelas]'}. Mohon maaf mengganggu waktu Bapak/Ibu. Saya ingin bertanya mengenai ${keperluan || '[keperluan]'}
+Perkenalkan, saya ${nama || '[nama]'} dari kelas ${kelas || '[kelas]'}. Mohon maaf mengganggu waktu ${title === 'Pak' ? 'Bapak' : 'Ibu'}. Saya ingin bertanya mengenai ${keperluan || '[keperluan]'}
 
 Terima kasih atas perhatian dan waktunya.
 
@@ -71,7 +71,7 @@ Selamat ${waktu}, ${title}${dosenName}.
 
 Perkenalkan, saya ${nama || '[nama]'} dari kelas ${kelas || '[kelas]'}. Melalui pesan ini, saya ingin menyampaikan informasi bahwa ${keperluan || '[keperluan]'}.
 
-Terima kasih atas perhatian Bapak/Ibu.
+Terima kasih atas perhatian ${title === 'Pak' ? 'Bapak' : 'Ibu'}.
 
 Wassalamu'alaikum Wr. Wb.`;
     } else if (activeTab === 'Bertemu') {
@@ -79,7 +79,7 @@ Wassalamu'alaikum Wr. Wb.`;
 
 Selamat ${waktu}, ${title}${dosenName}.
 
-Perkenalkan, saya ${nama || '[nama]'} dari kelas ${kelas || '[kelas]'}. Saya bermaksud untuk mengajukan permohonan bertemu dengan Bapak/Ibu terkait ${keperluan || '[keperluan]'}. Kapankah Bapak/Ibu memiliki waktu luang untuk melakukan pertemuan ini?
+Perkenalkan, saya ${nama || '[nama]'} dari kelas ${kelas || '[kelas]'}. Saya bermaksud untuk mengajukan permohonan bertemu dengan ${title === 'Pak' ? 'Bapak' : 'Ibu'} terkait ${keperluan || '[keperluan]'}. Kapankah ${title === 'Pak' ? 'Bapak' : 'Ibu'} memiliki waktu luang untuk melakukan pertemuan ini?
 
 Terima kasih atas perhatian dan waktunya.
 
@@ -234,6 +234,10 @@ Wassalamu'alaikum Wr. Wb.`;
           </section>
         </div>
       </main>
+
+      <footer className="app-footer">
+        <p>Copyright © 2025 he1kousen</p>
+      </footer>
 
       {showNotification && (
         <div className={`notification ${isHiding ? 'hide' : ''}`}>
